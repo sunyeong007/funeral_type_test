@@ -1,0 +1,1 @@
+# funeral_type_test
