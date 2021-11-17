@@ -23,6 +23,67 @@ html {
   height: 460px;
 }
 
+.card_container {
+  display: flex;
+  margin: auto;
+  margin-top: 2vw;
+}
+
+.maincontainer {
+  position: relative;
+  width: 20vw;
+  height: 30vw;
+
+  margin: 0 2vw;
+}
+
+.thecard {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+
+.thecard:hover {
+  transform: rotateY(180deg);
+}
+
+.thefront {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: #1f1e1b;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 1vw;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.theback {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: #5fcf80;
+  color: #fff;
+  transform: rotateY(180deg);
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 1vw;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.thefront p {
+  text-align: center;
+}
+
 .cube {
   position: relative;
   top: 140px;
