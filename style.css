@@ -1,8 +1,145 @@
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgba(255, 114, 96, 1);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 114, 96, 1) 0%,
+    rgba(255, 114, 96, 1) 14%,
+    rgba(252, 210, 113, 1) 54%,
+    rgba(252, 210, 113, 1) 61%,
+    rgba(102, 176, 102, 1) 93%,
+    rgba(96, 135, 134, 1) 100%
+  );
+}
+
+.container {
+  background-color: transparent;
+}
+.wrapper {
+  width: 100%;
+  perspective: 800;
+  height: 460px;
+}
+
+.cube {
+  position: relative;
+  top: 140px;
+  margin: 0 auto;
+  height: 200px;
+  width: 200px;
+  animation: spin 6s infinite linear;
+  transform-style: preserve-3d;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateY(0) rotateX(10deg);
+  }
+  to {
+    transform: rotateY(-360deg) rotateX(10deg);
+  }
+}
+
+.cube > div {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  border: 1px solid #333;
+  opacity: 0.8;
+}
+
+.cube > div:hover {
+  opacity: 1;
+  transition: opacity 0.3s linear;
+}
+
+.two {
+  transform: translateZ(250px);
+  background-color: #23b5af;
+}
+
+.three {
+  transform: rotateY(45deg) translateZ(250px);
+  background-color: #e8487f;
+}
+
+.four {
+  transform: rotateY(90deg) translateZ(250px);
+  background-color: #28b78d;
+}
+
+.five {
+  transform: rotateY(135deg) translateZ(250px);
+  background-color: #ff5b00;
+}
+
+.seven {
+  transform: rotateY(180deg) translateZ(250px);
+  background-color: #23b5af;
+}
+
+.eight {
+  transform: rotateY(-45deg) translateZ(250px);
+  background-color: #e8487f;
+}
+
+.nine {
+  transform: rotateY(-90deg) translateZ(250px);
+  background-color: #28b78d;
+}
+
+.ten {
+  transform: rotateY(-135deg) translateZ(250px);
+  background-color: #ff5b00;
+}
+
+#title {
+  color: #ffffff;
+}
+#funeral {
+  color: #ffffff;
+}
+#explain {
+  color: #ffffff;
+}
+
 article {
   display: flex;
   flex-direction: column;
 }
+.main-title {
+  font-size: 18px;
+  color: #3f3f3f;
+}
+.sub-title {
+  font-size: 50px;
+  font-weight: 600;
+  color: #ffffff;
+}
 
+.progress-bar {
+  background: tomato;
+}
+
+/* .btn {
+  
+  background-color: tomato;
+  border: none;
+} */
+
+.btn,
+.btn:active,
+.btn:visited {
+  color: white;
+  background-color: #23b5af !important;
+  border: none;
+}
+
+.btn:hover {
+  background-color: tomato !important;
+}
 .question {
   display: none;
 }
