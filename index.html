@@ -10,13 +10,14 @@
     <!--link:css단축 / bootstrap css보다 우리의 css가 밑에 있어야 수정 가능-->
     <link rel="stylesheet" href="style.css">
     
+    
 </head>
 <body class="container"> 
     <!--마우스 우클릭 + Open with Live Server하면 열림+새로고침 자동-->
     <!--<bootstrap mt:margintop 1~5사용 가능-->
     <article class="start">
-        <h1 class="main-title mt-5 text-center">이색장례식 테스트</h1>
-        <h2 class="sub-title mt-3 text-center">내 성격이 반영된 장례방식은 뭘까?</h1>
+        <p>이색장례식 테스트</p>
+        <h2 class="mt-2 text-center">내 성격이 반영된 장례방식 알아보기 테스트</h2>
         <div class="wrapper">
             <div class="cube">
               
@@ -31,27 +32,27 @@
               <div class="ten"></div>
             </div>
         </div>
-        <button type="button" class="btn btn-info mt-3 myBtn" onclick="start();">TEST 시작하기!</button>
+        <button class="mbtn" onclick="start();">TEST 시작하기!</button>
     </article>
     
     <article class="question">
         <div class="progress mt-5">
             <div class="progress-bar" role="progressbar" style="width: calc(100/7%)" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-        <h2 id="title" class="text-center mt-5">문제</h2>
+        <h2 id="title" class="text-center">문제</h2>
             <input type="hidden" id="type" value="EI">
         <div class="card_container">
             <div class="maincontainer">
                 <div class="thecard">
-                    <div class="thefront"><p>1</p></div>
-                    <div class="theback" id="A">back of card</div>
+                    <div class="thefront no-drag"><p>1</p></div>
+                    <div class="theback no-drag" id="A">back of card</div>
                 </div>
             </div>
     
             <div class="maincontainer">
                 <div class="thecard">
-                    <div class="thefront"><p>2</p></div>
-                    <div class="theback" id="B">back of card</div>
+                    <div class="thefront no-drag"><p>2</p></div>
+                    <div class="theback no-drag" id="B">back of card</div>
                 </div>
             </div>
         </div>
@@ -60,11 +61,31 @@
         <!-- <button id="A" type="button" class="btn btn-primary mt-5">Primary</button>
         <button id="B" type="button" class="btn btn-primary mt-3">Primary</button> -->
     </article>
+    
+        
     <article class="result">
-        <img id="img" class="rounded-circle" src="funeral.jpg" alt="funeral">
-        <h2 id="funeral" class="text-center mt-5">장례식 종류 이름</h2>
-        <h3 id="explain" class="text-center mt-3">장례식 설명</h3>
+        <div class="card_container2">
+            <div class="maincontainer2">
+                <div class="thecard">
+                    <div class="thefront"><p>결과 보기</p></div>
+                    <div class="theback" id="A">
+                        
+                        <div class="result_paper">
+                            <img id="img" src="funeral.jpg" alt="funeral">
+                            <h3 id="funeral" class="text-center mt-3 no-drag">장례식 종류 이름</h3>
+                            <p id="explain" class="text-center mt-3 no-drag">장례식 설명</p>
+                            <button class="mbtn mt-3" onclick=""><a href=""></a>자세히 보러가기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+        
+        
     </article>
+
+    
 
     <input type="hidden" id="EI" value="0">
     <input type="hidden" id="SN" value="0">
@@ -89,14 +110,14 @@
             
         }
         var result = {
-            "ESP" : {"funeral" : "풍선장례식", "explain" : "직경 2~2.5m의 커다란 풍선에 고인의 뼛가루를 넣어 날려 보내면 성층권에 도달해 기압 차에 의해 풍선이 팽창하고 곧 터져 뼛가루가 공중에 뿌려지는 방식으로, 유해가 토양에서 분해되므로 친환경적이며 자연으로 다시 돌아간다는 점에서 의미가 있다", "img" : "funeral.jpg"},
-            "ESJ" : {"funeral" : "사전장례식", "explain" : "소규모라 일반 장례식보다 환경오염 줄일 수 있고, 스스로 자신의 죽음과 장례를 준비하고, 주변 사람들과 이야기를 나눔으로써 삶을 잘 마무리할 수 있음", "img" : "funeral.jpg"},
-            "ENP" : {"funeral" : "폭죽장례식", "explain" : "유골을 갈았을 때 나오는 재를 폭죽과 함께 쏘아 올리는 방법으로 유골은 공중에서 산화됨. 짧은 인생을 폭죽처럼 화려하게 마무리한다는 이미지가 있고, 고객이 원하는 대로 폭죽이 터지는 모양이나 흐름을 조절할 수도 있음", "img" : "funeral.jpg"},
-            "ENJ" : {"funeral" : "유골음반", "explain" : "단순한 ‘추모 앨범’이 아니라, 고인의 목소리나 기념 음악이 녹음되며 음반 역시 유골 가루로 만들어짐", "img" : "funeral.jpg"},
-            "ISP" : {"funeral" : "해양유골함", "explain" : "환경친화적 콘크리트 소재로 만든 인공 암초 유골함을 바다 밑에 보관해주는 방식", "img" : "funeral.jpg"},
-            "ISJ" : {"funeral" : "퇴비화", "explain" : "유골을 친환경적으로 땅에 묻고 싶어 하는 사람을 위해 시신을 흙으로 바꾸는 '인간 퇴비화' 기술이 개발됨. 흙이 된 시신을 숲에 뿌려져 자연과 하나되거나 유족에게 전달", "img" : "funeral.jpg"},
-            "INP" : {"funeral" : "트레일러하우스장례식", "explain" : "‘마지막 가족 여행’이라는 콘셉트로 트레일러하우스 3개를 연결한 장례식장", "img" : "funeral.jpg"},
-            "INJ" : {"funeral" : "다이아몬드장례식", "explain" : "유골에 열과 압력을 가해 불순물을 제거하고 가공한 다이아몬드로 악세서리를 제작해 항상 고인과 함께 있는 듯한 느낌을 전달함", "img" : "funeral.jpg"},
+            "ESP" : {"funeral" : "풍선장례식", "explain" : "직경 2~2.5m의 커다란 풍선에 고인의 뼛가루를 넣어 날려 보내면 성층권에 도달해 기압 차에 의해 풍선이 팽창하고 곧 터져 뼛가루가 공중에 뿌려지는 방식으로, 유해가 토양에서 분해되므로 친환경적이며 자연으로 다시 돌아간다는 점에서 의미가 있다", "img" : "풍선.png"},
+            "ESJ" : {"funeral" : "사전장례식", "explain" : "소규모라 일반 장례식보다 환경오염 줄일 수 있고, 스스로 자신의 죽음과 장례를 준비하고, 주변 사람들과 이야기를 나눔으로써 삶을 잘 마무리할 수 있음", "img" : "사전장례식.png"},
+            "ENP" : {"funeral" : "폭죽장례식", "explain" : "유골을 갈았을 때 나오는 재를 폭죽과 함께 쏘아 올리는 방법으로 유골은 공중에서 산화됨. 짧은 인생을 폭죽처럼 화려하게 마무리한다는 이미지가 있고, 고객이 원하는 대로 폭죽이 터지는 모양이나 흐름을 조절할 수도 있음", "img" : "불꽃놀이.png"},
+            "ENJ" : {"funeral" : "유골음반", "explain" : "단순한 ‘추모 앨범’이 아니라, 고인의 목소리나 기념 음악이 녹음되며 음반 역시 유골 가루로 만들어짐", "img" : "고인 음반.png"},
+            "ISP" : {"funeral" : "해양유골함", "explain" : "환경친화적 콘크리트 소재로 만든 인공 암초 유골함을 바다 밑에 보관해주는 방식", "img" : "해양유골함.png"},
+            "ISJ" : {"funeral" : "퇴비화", "explain" : "유골을 친환경적으로 땅에 묻고 싶어 하는 사람을 위해 시신을 흙으로 바꾸는 '인간 퇴비화' 기술이 개발됨. 흙이 된 시신을 숲에 뿌려져 자연과 하나되거나 유족에게 전달", "img" : "퇴비화.png"},
+            "INP" : {"funeral" : "트레일러하우스장례식", "explain" : "‘마지막 가족 여행’이라는 콘셉트로 트레일러하우스 3개를 연결한 장례식장", "img" : "트레일러.png"},
+            "INJ" : {"funeral" : "다이아몬드장례식", "explain" : "유골에 열과 압력을 가해 불순물을 제거하고 가공한 다이아몬드로 악세서리를 제작해 항상 고인과 함께 있는 듯한 느낌을 전달함", "img" : "다이아몬드.png"},
         }
         function start() {
             $(".start").hide();
@@ -124,7 +145,7 @@
                 ($("#EI").val() < 2) ? mbti+="I" : mbti+="E";
                 ($("#SN").val() < 2) ? mbti+="N" : mbti+="S";
                 ($("#JP").val() < 2) ? mbti+="P" : mbti+="J";
-                alert(mbti);
+                alert("결과 분석이 완료되었습니다.");
                 $("#img").attr("src",result[mbti]["img"]);
                 $("#funeral").html(result[mbti]["funeral"]);
                 $("#explain").html(result[mbti]["explain"]);
@@ -145,6 +166,14 @@
             
         }
     </script>
-
+    <!-- <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelectorAll(".card"), {
+		max: 25,
+		speed: 400,
+        glare: true,
+        "max-glare": 1,
+	    });
+    </script> -->
 </body>
 </html>
