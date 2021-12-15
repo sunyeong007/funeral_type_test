@@ -103,9 +103,25 @@ a {
 
 .thecard:hover {
   transform: rotateY(180deg);
-  /* transition: opacity 0.5s linear;*/
+  transition: opacity 0.5s linear;
 }
+/*main container hover 했을 때 thecard가 뒤집어지도록*/
 
+/* .maincontainer:hover ~ .thecard {
+  transform: rotateY(180deg);
+  transition: opacity 0.5s linear;
+} */
+.thecard2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+  display: block;
+}
+.thecard2:hover {
+  transform: rotateY(180deg);
+}
 .thefront {
   position: absolute;
   width: 100%;
