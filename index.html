@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <!--link:css단축 / bootstrap css보다 우리의 css가 밑에 있어야 수정 가능-->
     <link rel="stylesheet" href="style.css">
@@ -17,19 +16,19 @@
     <!--<bootstrap mt:margintop 1~5사용 가능-->
     <article class="start">
         <p>이색장례식 테스트</p>
-        <h2 class="mt-2 text-center">내 성격이 반영된 장례방식 알아보기 테스트</h2>
+        <h2 class="mt-2 text-center">내 성향이 반영된 이색 장례방식 알아보기</h2>
         <div class="wrapper">
             <div class="cube">
               
-              <div class="two"></div>
-              <div class="three"></div>
-              <div class="four"></div>
-              <div class="five"></div>
+              <div class="two"><p>풍선 장례식</p></div>
+              <div class="three"><p>온라인 생중계 장례</p></div>
+              <div class="four"><p>폭죽 장례식</p></div>
+              <div class="five"><p>유골 음반</p></div>
               
-              <div class="seven"></div>
-              <div class="eight"></div>
-              <div class="nine"></div>
-              <div class="ten"></div>
+              <div class="seven"><p>해양 유골함</p></div>
+              <div class="eight"><p>퇴비화 장례식</p></div>
+              <div class="nine"><p>트레일러하우스 장례</p></div>
+              <div class="ten"><p>다이아몬드 장례식</p></div>
             </div>
         </div>
         <button class="mbtn" onclick="start();">TEST 시작하기!</button>
@@ -41,17 +40,19 @@
         </div>
         <h2 id="title" class="text-center">문제</h2>
             <input type="hidden" id="type" value="EI">
+        <!-- <div class="div1">11111</div>
+        <div class="div2">22222 </div> -->
         <div class="card_container">
             <div class="maincontainer">
                 <div class="thecard">
-                    <div class="thefront no-drag"><p>1</p></div>
+                    <div class="thefront no-drag"><p>뒤집어보세요!</p></div>
                     <div class="theback no-drag" id="A">back of card</div>
                 </div>
             </div>
     
             <div class="maincontainer">
                 <div class="thecard">
-                    <div class="thefront no-drag"><p>2</p></div>
+                    <div class="thefront no-drag"><p>뒤집어보세요!</p></div>
                     <div class="theback no-drag" id="B">back of card</div>
                 </div>
             </div>
@@ -71,15 +72,22 @@
                     <div class="theback" id="A">
                         
                         <div class="result_paper">
-                            <img id="img" src="funeral.jpg" alt="funeral">
+                            <div class="img_container"><img id="result_img" src="funeral.jpg" alt="funeral"></div>
                             <h3 id="funeral" class="text-center mt-3 no-drag">장례식 종류 이름</h3>
                             <p id="explain" class="text-center mt-3 no-drag">장례식 설명</p>
-                            <button class="mbtn mt-3" onclick=""><a href=""></a>자세히 보러가기</button>
+                            <button class="mbtn mt-3" onClick="window.location.reload()">다시 테스트하기</button>
                         </div>
                     </div>
                 </div>
             </div>
     
+        </div>
+        <div class="card_container2">
+            <p class="footer_p">This webpage is one of the result of future funeral identity design.<br>We believe that every human being should be able to choose and plan their funeral in an easy and comfortable way.<br><br><b>©2021 by Sunyeong Jeong, All Rights Reserved.</b></p>
+        </div>
+        
+        <div class="footer">
+            
         </div>
         
         
@@ -94,34 +102,37 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    
+    
     <script>
         var num = 1;
         var q = {
-            1: {"title" : "난 친구들과 신나게 놀고 나면 텐션이", "type": "EI", "A":"올라간다.", "B":"낮아진다"},
-            2: {"title" : "나는 정말 정말", "type": "EI", "A":"관심 받는 것이 좋다", "B":"튀고 싶지 않다"},
-            3: {"title" : "처음 만나는 사람들과의 자리는", "type": "EI", "A":"기대된다", "B":"무섭다"},
+            1: {"title" : "난 친구들과 신나게 놀고 나면 텐션이", "type": "EI", "A":"올라간다!!!!", "B":"낮아진다...."},
+            2: {"title" : "나는 정말 정말", "type": "EI", "A":"관심 받는<br> 것이 좋다", "B":"튀고 싶지 않다"},
+            3: {"title" : "처음 만나는 사람들과의 자리는", "type": "EI", "A":"기대된다", "B":"긴장된다"},
             
             4: {"title" : "분리수거를 할 때 페트병 위 비닐을", "type": "SN", "A":"뗀다", "B":"안뗀다"},
-            5: {"title" : "제로웨이스트 용품에 대해", "type": "SN", "A":"흥미를 가지고 있다", "B":"흥미가 없다"},
+            5: {"title" : "제로웨이스트 용품을 구매해본 경험이", "type": "SN", "A":"있다", "B":"없다"},
 
             
             6: {"title" : "공부를 할 때", "type": "JP", "A":"계획부터 세우는 편이다", "B":"급한대로 한다"},
-            7: {"title" : "여행을 가기로 하면", "type": "JP", "A":"시간 단위로 계획을 짠다", "B":"대략적인 장소만 정해서 간다"},
+            7: {"title" : "여행을 가기로 하면", "type": "JP", "A":"시간 단위로<br> 계획을 짠다", "B":"대략적인 장소만 정해서 간다"},
             
         }
         var result = {
-            "ESP" : {"funeral" : "풍선장례식", "explain" : "직경 2~2.5m의 커다란 풍선에 고인의 뼛가루를 넣어 날려 보내면 성층권에 도달해 기압 차에 의해 풍선이 팽창하고 곧 터져 뼛가루가 공중에 뿌려지는 방식으로, 유해가 토양에서 분해되므로 친환경적이며 자연으로 다시 돌아간다는 점에서 의미가 있다", "img" : "풍선.png"},
-            "ESJ" : {"funeral" : "온라인 생중계 장례식", "explain" : "장례식장에서 나오는 일회용 쓰레기를 줄일 수 있고, 많은 사람들이 참여할 수 있음", "img" : "온라인.png"},
-            "ENP" : {"funeral" : "폭죽장례식", "explain" : "유골을 갈았을 때 나오는 재를 폭죽과 함께 쏘아 올리는 방법으로 유골은 공중에서 산화됨. 짧은 인생을 폭죽처럼 화려하게 마무리한다는 이미지가 있고, 고객이 원하는 대로 폭죽이 터지는 모양이나 흐름을 조절할 수도 있음", "img" : "불꽃놀이.png"},
-            "ENJ" : {"funeral" : "유골음반", "explain" : "단순한 ‘추모 앨범’이 아니라, 고인의 목소리나 기념 음악이 녹음되며 음반 역시 유골 가루로 만들어짐", "img" : "고인 음반.png"},
-            "ISP" : {"funeral" : "해양유골함", "explain" : "환경친화적 콘크리트 소재로 만든 인공 암초 유골함을 바다 밑에 보관해주는 방식", "img" : "해양유골함.png"},
-            "ISJ" : {"funeral" : "퇴비화", "explain" : "유골을 친환경적으로 땅에 묻고 싶어 하는 사람을 위해 시신을 흙으로 바꾸는 '인간 퇴비화' 기술이 개발됨. 흙이 된 시신을 숲에 뿌려져 자연과 하나되거나 유족에게 전달", "img" : "퇴비화.png"},
-            "INP" : {"funeral" : "트레일러하우스장례식", "explain" : "‘마지막 가족 여행’이라는 콘셉트로 트레일러하우스 3개를 연결한 장례식장", "img" : "트레일러.png"},
-            "INJ" : {"funeral" : "다이아몬드장례식", "explain" : "유골에 열과 압력을 가해 불순물을 제거하고 가공한 다이아몬드로 악세서리를 제작해 항상 고인과 함께 있는 듯한 느낌을 전달함", "img" : "다이아몬드.png"},
+            "ESP" : {"funeral" : "풍선 장례식", "explain" : "커다란 풍선에 고인의 뼛가루를 넣어 날려 보내면 성층권에 도달해 기압 차에 의해 풍선이 팽창하고 곧 터져 뼛가루가 공중에 뿌려지게 됩니다. 유해가 토양에서 분해되므로 친환경적이며 자연으로 다시 돌아간다는 점에서 의미가 있습니다.", "img" : "풍선.png"},
+            "ESJ" : {"funeral" : "온라인 생중계 장례식", "explain" : "장례식장에서 나오는 일회용 쓰레기를 줄일 수 있고, 많은 사람들이 참여할 수 있습니다. 친구 한 명이라도 더 부르고 싶다면, 온라인 생중계를 함께하는 장례식은 어떨까요?", "img" : "온라인.png"},
+            "ENP" : {"funeral" : "폭죽 장례식", "explain" : "유골을 갈았을 때 나오는 재를 폭죽과 함께 쏘아 올리는 방법으로 유골은 공중에서 산화됩니다. 짧은 인생을 폭죽처럼 화려하게 마무리한다는 이미지가 있고, 고객이 원하는 대로 폭죽이 터지는 모양이나 흐름을 조절할 수도 있습니다.", "img" : "불꽃놀이.png"},
+            "ENJ" : {"funeral" : "유골 음반", "explain" : "이 ‘추모 앨범’은 고인의 목소리나 기념 음악이 녹음되며 음반 역시 유골 가루로 만들어집니다. 나의 목소리를 이 세상 모든 사람들이 들을 수 있도록 남기고 싶은 분에게 안성맞춤입니다!", "img" : "고인 음반.png"},
+            "ISP" : {"funeral" : "해양 유골함", "explain" : "해양 유골함은 환경친화적 콘크리트 소재로 만든 인공 암초 유골함을 바다 밑에 보관해주는 방식입니다. 다음 생에 돌로 태어나고 싶다고 생각한 적이 있으시다면, 조심스럽게 추천 드립니다.", "img" : "해양유골함.png"},
+            "ISJ" : {"funeral" : "퇴비화 장례식", "explain" : "유골을 친환경적으로 땅에 묻고 싶어 하는 사람들을 위해 시신을 흙으로 바꾸는 '인간 퇴비화' 기술이 개발되었습니다. 흙이 된 시신은 숲에 뿌려져 자연과 하나가 되거나 유족에게 전달됩니다.", "img" : "퇴비화.png"},
+            "INP" : {"funeral" : "트레일러 하우스 장례식", "explain" : "‘마지막 가족 여행’이라는 콘셉트로 트레일러하우스를 연결한 장례식장입니다. 가족과 친구와 같이 소규모로 진행되기 때문에 남은 이들이 나에 대한 추억을 더 잘 공유할 수 있습니다.", "img" : "트레일러.png"},
+            "INJ" : {"funeral" : "다이아몬드 장례식", "explain" : "유골에 열과 압력을 가해 불순물을 제거하고 가공한 다이아몬드로 악세서리를 제작해 항상 고인과 함께 있는 듯한 느낌을 전달합니다. 이렇게 만들어진 다이아몬드는 고유의 색이 있다고 합니다.", "img" : "다이아몬드.png"},
         }
         function start() {
             $(".start").hide();
             $(".question").show();
+            alert("카드를 뒤집을 때 카드 정가운데에 마우스를 대거나, 카드의 아래 방향에서 접근하면 더 잘 뒤집힙니다! :)");
             next();
         }
 
@@ -136,6 +147,7 @@
         $("#B").click(function(){
             next();
         });
+
         //attr은 태그의 속성을 바꿔주는 함수
         function next() {
             if (num == 8) {
@@ -145,8 +157,7 @@
                 ($("#EI").val() < 2) ? mbti+="I" : mbti+="E";
                 ($("#SN").val() < 2) ? mbti+="N" : mbti+="S";
                 ($("#JP").val() < 2) ? mbti+="P" : mbti+="J";
-                alert("결과 분석이 완료되었습니다.");
-                $("#img").attr("src",result[mbti]["img"]);
+                $("#result_img").attr("src",result[mbti]["img"]);
                 $("#funeral").html(result[mbti]["funeral"]);
                 $("#explain").html(result[mbti]["explain"]);
                 // 조건 ? 참 : 거짓
