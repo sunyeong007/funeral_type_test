@@ -9,9 +9,11 @@
 html {
   width: 100%;
   height: 100%;
-  overflow: hidden;
   justify-content: center;
   font-family: "MaruBuri-Regular";
+}
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
 }
 
 body {
@@ -28,9 +30,14 @@ a {
   font-weight: 300;
 }
 .container {
-  background-color: transparent;
   text-align: center;
+  /* background-color: rgb(235, 233, 226); */
   background-image: url("pattern.png");
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .start {
@@ -40,12 +47,6 @@ a {
 }
 .start p {
   margin-top: 10vh;
-}
-
-.wrapper {
-  width: 100%;
-  perspective: 800;
-  height: 420px;
 }
 
 /* .myBtn {
@@ -66,6 +67,27 @@ a {
   border: none;
 } */
 
+.div1 {
+  position: absolute;
+  z-index: 100;
+  background-color: transparent;
+  opacity: 0.5;
+  top: 36vh;
+  left: calc(50% - 23vw);
+  width: 21vw;
+  height: 21vw;
+}
+.div2 {
+  position: absolute;
+  z-index: 100;
+  background-color: transparent;
+  opacity: 0.5;
+  top: 36vh;
+  left: calc(50% + 2vw);
+  width: 21vw;
+  height: 21vw;
+}
+
 .card_container {
   display: flex;
   margin: auto;
@@ -78,12 +100,15 @@ a {
   height: 20vw;
 
   margin: 0 2vw;
+
+  perspective: 800px;
 }
 .maincontainer2 {
   position: relative;
   width: 40vw;
   height: 20vw;
   margin: 0 2vw;
+  perspective: 800px;
 }
 .card_container2 {
   display: flex;
@@ -99,18 +124,30 @@ a {
   transform-style: preserve-3d;
   transition: all 0.5s ease;
   display: block;
+  perspective-origin: left;
+  transform: rotateX(45deg);
 }
 
 .thecard:hover {
-  transform: rotateY(180deg);
-  transition: opacity 0.5s linear;
+  transform: rotateY(180deg) rotateX(0deg);
+  /* transition: opacity 0.5s linear; */
 }
-/*main container hover 했을 때 thecard가 뒤집어지도록*/
 
+/*main container hover 했을 때 thecard가 뒤집어지도록*/
 /* .maincontainer:hover ~ .thecard {
   transform: rotateY(180deg);
   transition: opacity 0.5s linear;
 } */
+
+/* .div1:hover ~ .thecard {
+  transform: rotateY(180deg);
+  transition: opacity 0.5s linear;
+}
+.div2:hover ~ .thecard {
+  transform: rotateY(180deg);
+  transition: opacity 0.5s linear;
+} */
+
 .thecard2 {
   position: absolute;
   width: 100%;
@@ -118,6 +155,7 @@ a {
   transform-style: preserve-3d;
   transition: all 0.5s ease;
   display: block;
+  transform: rotateX(45deg) rotateX(0deg);
 }
 .thecard2:hover {
   transform: rotateY(180deg);
@@ -146,32 +184,27 @@ a {
   background: #87a7aa;
   color: #f8f3ef;
   transform: rotateY(180deg);
-  font-size: 18px;
+  font-size: 1.3vw;
   font-weight: bold;
   border-radius: 1vw;
   display: flex;
   align-items: center;
   margin: auto;
   justify-content: center;
-  letter-spacing: 0.1vw;
+  letter-spacing: 0vw;
+  line-height: 2.6vw;
   transition: 0.6s cubic-bezier(0.01, 1.69, 0.99, 0.94);
   font-weight: 300;
 }
+.thecard > .theback {
+  font-size: 2.5vw;
+  line-height: 3.2vw;
+}
 .theback:hover {
-  letter-spacing: 0.5vw;
+  letter-spacing: 0.1vw;
 }
 .thefront p {
   text-align: center;
-}
-
-.cube {
-  position: relative;
-  top: 140px;
-  margin: 0 auto;
-  height: 200px;
-  width: 200px;
-  animation: spin 6s infinite linear;
-  transform-style: preserve-3d;
 }
 
 @keyframes spin {
@@ -182,60 +215,79 @@ a {
     transform: rotateY(-360deg) rotateX(10deg);
   }
 }
+.wrapper {
+  width: 100%;
+  perspective: 1000px;
+  height: 65vh;
+}
 
+.cube {
+  position: relative;
+  top: 140px;
+  margin: 0 auto;
+  height: 220px;
+  width: 160px;
+  animation: spin 9s infinite linear;
+  transform-style: preserve-3d;
+}
 .cube > div {
   position: absolute;
-  height: 200px;
-  width: 200px;
+  height: 220px;
+  width: 160px;
   opacity: 0.3;
   border-radius: 1vh;
+  /* background-image: url("card.jpg"); */
+  background-size: cover;
   background-color: #fff;
+}
+.cube > div > p {
+  display: none;
+  font-size: 1.5vh;
+  font-weight: 700;
 }
 
 .cube > div:hover {
   opacity: 1;
   transition: opacity 0.5s linear;
-  background-color: #87a7aa;
+  background-color: #f8f3ef;
+  background-image: url("card2.png");
+  background-size: cover;
+}
+.cube > div:hover p {
+  display: block;
+  color: #87a7aa;
 }
 
 .two {
   transform: translateZ(250px);
-  /* background-color: #23b5af; */
 }
 
 .three {
   transform: rotateY(45deg) translateZ(250px);
-  /* background-color: #e8487f; */
 }
 
 .four {
   transform: rotateY(90deg) translateZ(250px);
-  /* background-color: #28b78d; */
 }
 
 .five {
   transform: rotateY(135deg) translateZ(250px);
-  /* background-color: #ff5b00; */
 }
 
 .seven {
   transform: rotateY(180deg) translateZ(250px);
-  /* background-color: #23b5af; */
 }
 
 .eight {
   transform: rotateY(-45deg) translateZ(250px);
-  /* background-color: #e8487f; */
 }
 
 .nine {
   transform: rotateY(-90deg) translateZ(250px);
-  /* background-color: #28b78d; */
 }
 
 .ten {
   transform: rotateY(-135deg) translateZ(250px);
-  /* background-color: #ff5b00; */
 }
 
 #title {
@@ -254,6 +306,7 @@ a {
 article {
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
 .progress {
@@ -270,17 +323,6 @@ article {
   border: none;
 } */
 
-.btn,
-.btn:active,
-.btn:visited {
-  color: #f8f3ef;
-  background-color: #23b5af !important;
-  border: none;
-}
-
-.btn:hover {
-  background-color: tomato !important;
-}
 .question {
   display: none;
 }
@@ -311,6 +353,7 @@ article {
   transform: translateY(0px);
   opacity: 1;
 }
+
 .card .content .result h2 {
   font-size: 1.8em;
   color: #f8f3ef;
@@ -329,13 +372,33 @@ article {
   background-color: #f8f3ef;
   border-radius: 1vh;
   padding: 3vh;
-  height: 80vh;
+  height: auto;
   margin-top: 10vh;
 }
-
-#img {
+.img_container {
+  width: 40vw;
+  height: 40vh;
+  background-color: transparent;
+}
+#result_img {
   width: 300px;
   margin: 0 auto;
+  animation-name: res_img_move;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+@keyframes res_img_move {
+  0% {
+    width: 300px;
+  }
+  50% {
+    width: 310px;
+  }
+  100% {
+    width: 300px;
+  }
 }
 
 /* article.result {
@@ -393,4 +456,22 @@ a .mbtn {
   -webkit-user-select: none;
   -khtml-user-select: none;
   user-select: none;
+}
+.footer_p {
+  /* position: absolute; */
+  z-index: 1000;
+  /* text-align: center; */
+  font-size: 2vh;
+  line-height: 3.6vh;
+  margin-top: 24vh;
+}
+.footer {
+  background-color: #f8f3ef;
+  width: 120vw;
+  height: 30vh;
+  position: absolute;
+  margin-top: 110vh;
+  margin-left: calc(50% - 80vw);
+
+  /* border-radius: 20vh 20vh 0 0; */
 }
